@@ -37,3 +37,11 @@ function writeToFile(fileName, data) {
   });
 }
 
+function init() {
+  inquirer.prompt(questions).then(function (userInput) {
+    console.log(userInput);
+    writeToFile(logo.svg, SVG(userInput));
+  });
+}
+
+init();

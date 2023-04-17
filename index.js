@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { Circle, Square, Triangle } = require("./lib/shapes");
+// const { Circle, Square, Triangle } = require("./lib/shapes");
+const SVG = require("./lib/SVG");
 
 const questions = [
   {
@@ -27,3 +28,4 @@ const questions = [
       "Enter a color keyword or the hexadecimal number for the color of the shape",
   },
 ];
+

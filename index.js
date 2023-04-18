@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const SVG = require("./lib/SVG");
+const SVG = require("./lib/SVG.js");
 
 const questions = [
   {
@@ -10,7 +10,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "text-color",
+    name: "textColor",
     message:
       "Enter a color keyword or the hexadecimal number for the color of the text.",
   },
@@ -22,13 +22,14 @@ const questions = [
   },
   {
     type: "input",
-    name: "shape-color",
+    name: "shapeColor",
     message:
       "Enter a color keyword or the hexadecimal number for the color of the shape",
   },
 ];
 
 function writeToFile(fileName, data) {
+  const logo = SVG(data);
   fs.writeFile(fileName, data, (err) => {
     if (err) {
       return console.log("ERROR!");
@@ -40,7 +41,7 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then(function (userInput) {
     console.log(userInput);
-    const fileName = `logo.svg`
+    const fileName = `logo.svg`;
     writeToFile(fileName, SVG(userInput));
   });
 }

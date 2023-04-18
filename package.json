@@ -12,7 +12,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "N/A"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

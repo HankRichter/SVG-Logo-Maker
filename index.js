@@ -29,7 +29,6 @@ const questions = [
 ];
 
 function writeToFile(fileName, data) {
-  const logo = SVG(data);
   fs.writeFile(fileName, data, (err) => {
     if (err) {
       return console.log("ERROR!");
@@ -42,7 +41,7 @@ function init() {
   inquirer.prompt(questions).then(function (userInput) {
     console.log(userInput);
     const fileName = `logo.svg`;
-    writeToFile(fileName, SVG(userInput));
+    writeToFile(`./examples/${fileName}`, SVG(userInput));
   });
 }
 

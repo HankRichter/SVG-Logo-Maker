@@ -41,7 +41,7 @@ function init() {
   inquirer.prompt(questions).then(function (userInput) {
     console.log(userInput);
     const fileName = `logo.svg`;
-    writeToFile(`./examples/${fileName}`, SVG(userInput));
+    writeToFile(`./examples/${fileName}.svg`, SVG(userInput));
   });
 }
 
